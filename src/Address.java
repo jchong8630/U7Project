@@ -8,6 +8,7 @@ public class Address {
     private String city;
     private String state;
     private int zip;
+    private String zipStr;
 
     public Address(String s, String sn, String apt, String c, String st, int z){
         street = s;
@@ -16,6 +17,15 @@ public class Address {
         city = c;
         state = st;
         zip = z;
+        if (zip < 1000){
+            zipStr  = "00" + zip;
+        }
+        else if (zip < 10000){
+            zipStr  = "0" + zip;
+        }
+        else{
+            zipStr = ""+ zip;
+        }
     }
 
     public Address(String address){
@@ -33,6 +43,15 @@ public class Address {
             city = addressSplit[3];
             state = addressSplit[4];
             zip = Integer.parseInt(addressSplit[5]);
+        }
+        if (zip < 1000){
+            zipStr  = "00" + zip;
+        }
+        else if (zip < 10000){
+            zipStr  = "0" + zip;
+        }
+        else{
+            zipStr = ""+ zip;
         }
     }
 
@@ -70,6 +89,6 @@ public class Address {
     }
 
     public String toString() {
-        return street + " " + streetName + " " + aptNumber + ", " + city + ", " + state + " " + zip;
+        return street + " " + streetName + " " + aptNumber + ", " + city + ", " + state + " " + zipStr;
     }
 }
