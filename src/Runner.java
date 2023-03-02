@@ -32,9 +32,12 @@ public class Runner {
                 pa.generatePackages(num);
                 System.out.println(pa.runSimulation());
             }
+            if (choice == 3){
+                System.out.println("The base cost for shipping is $3.75\nThere is a 5 cent charge for every tenth of a pound\n" +
+                        "Then the difference between county codes is divided by 100 and added to the total\n\nOversized Packages Fees:\nAny package that exceeds a combined 36 inches will cost an additional 10 cents per inch.\n" +
+                        "Additionally, packages that are more than 40 pounds will be charged 10 cents per tenth of a pound over the 40 pound limit.\n");
+            }
         }
-        Address a = new Address("1313 Mockingbird Lane Apt 6A, Springfield, MO 65123");
-        Address b = new Address("1313 Mockingbird Lane Apt 6A, Springfield, MO 23451");
 
     }
 }
